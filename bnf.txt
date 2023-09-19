@@ -1,0 +1,47 @@
+<programa> ::=  Proceso <nombre_proceso> <eol>
+                    <tab> <instrucciones>
+                FinProceso
+
+<nombre_proceso> ::= <id_variable>
+
+<instrucciones> ::= <instruccion> <instrucciones> | <instruccion> <eol> <instrucciones> | <eol>
+<instruccion> ::= <si> | <mientras> | <expresion> | <declaracion> | <funcion> ; 
+
+
+<si> ::=    Si ( <expresion> ) <eol> 
+                [ <tab> <instrucciones> <eol> ] 
+                [ <entonces> ] 
+            FinSi
+
+
+<entonces> ::=  Entonces <eol> 
+                    [ <tab> <instrucciones> <eol>]
+
+
+<mientras> ::=  Mientras ( <expresion> ) <eol> 
+                    [ <tab> <instrucciones> <eol> ]
+                FinMientras
+
+
+<declaracion> ::= <tipo_variable> <id_variable> [multiples_id]
+<multiples_id> ::= , <id_variable>
+
+
+<funcion> ::=   SubProceso [ <variable_retorno> <- ] <nombre_subproceso> [ <argumentos> ] <eol>
+                    [ <tab> <instrucciones> <eol> ]
+                FinSubproceso
+
+<variable_retorno> ::= <id_variable>
+<argumentos> ::= <argumento> [ , argumentos ]
+<argumento> ::= <tipo_variable> <id_variable>
+
+
+
+<id_variable> ::= <simbolo_primitivo><digito>
+<tipo_variable> ::= Logico | Entero | Real | Caracter | Cadena
+
+<simbolo_primitivo> ::= a | b | .. | z | A | B | .. | Z | _
+<digito> ::= 0 | 1 | .. | 9
+
+<eol> ::= '\n'
+<tab> ::= '\t'
