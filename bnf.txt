@@ -33,6 +33,22 @@
 
 <entrada_salida> ::= Leer <open_paren> <id_variable> <close_paren> | Escribir <open_paren> <id_variable> <close_paren>
 
+<expresion> ::= <expresion> + <expresion> 
+                | <expresion> - <expresion> 
+                | <expresion> * <expresion> 
+                | <expresion> / <expresion> 
+                | <expresion> < <expresion> 
+                | <expresion> <= <expresion> 
+                | <expresion> > <expresion> 
+                | <expresion> >= <expresion> 
+                | <expresion> != <expresion> 
+                | <expresion> == <expresion> 
+                | <expresion> && <expresion> 
+                | <expresion> || <expresion> 
+                | <open_paren> <expresion> <close_paren> 
+                | <id_variable> 
+                | <digito>
+
 <id_variable> ::= <simbolo_primitivo> <id_variable_tail>
 <id_variable_tail> ::= <digito> <id_variable_tail> | ε
 
