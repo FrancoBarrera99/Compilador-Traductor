@@ -7,7 +7,7 @@
 <instrucciones> ::= <instruccion> <instrucciones> | <instruccion> <eol> <instrucciones> | <eol>
 <instruccion> ::= <si> | <mientras> | <expresion> | <declaracion> | <funcion> | <entrada_salida> ; 
 
-<si> ::=    Si ( <expresion> ) <eol> 
+<si> ::=    Si <open_paren> <expresion> <close_paren> <eol> 
                 [ <tab> <instrucciones> <eol> ] 
                 [ <entonces> ] 
             FinSi
@@ -15,7 +15,7 @@
 <entonces> ::=  Entonces <eol> 
                     [ <tab> <instrucciones> <eol>]
 
-<mientras> ::=  Mientras ( <expresion> ) <eol> 
+<mientras> ::=  Mientras <open_paren> <expresion> <close_paren> <eol> 
                     [ <tab> <instrucciones> <eol> ]
                 FinMientras
 
@@ -31,7 +31,7 @@
 <argumentos_tail> ::= , <argumento> <argumentos_tail> | <eol>
 <argumento> ::= <tipo_variable> <id_variable>
 
-<entrada_salida> ::= Leer ( <id_variable> ) | Escribir ( <id_variable> )
+<entrada_salida> ::= Leer <open_paren> <id_variable> <close_paren> | Escribir <open_paren> <id_variable> <close_paren>
 
 <id_variable> ::= <simbolo_primitivo> <id_variable_tail>
 <id_variable_tail> ::= <digito> <id_variable_tail> | ε
@@ -43,3 +43,5 @@
 
 <eol> ::= '\n'
 <tab> ::= '\t'
+<open_paren> ::= (
+<close_paren> ::= )
