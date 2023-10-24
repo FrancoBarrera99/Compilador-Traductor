@@ -23,7 +23,6 @@ Proceso         "Proceso"
 FinProceso      "FinProceso"
 /* ======= Fin definición de palabras clave ======= */
 
-
 /* ======= Definición de expresiones regulares ======= */
 digito          [0-9]
 letra           [a-zA-Z]
@@ -37,7 +36,6 @@ tab             \t
 
 %%
 
-/* ======= Definición de producciones ======= */
 {espacio}       ; // Ignorar espacios y tabulaciones
 
 {eol}           { 
@@ -69,7 +67,15 @@ tab             \t
 {Proceso}       { return PROCESO; }
 {FinProceso}    { return FINPROCESO; }
 
-{id_variable}   {id_variable} { return ID_VARIABLE; }
+{digito}        {
+                    yylval = atoi( yytext );
+                    return DIGITO;
+                }
+                
+{id_variable}   { 
+                    yylval.str = strdup( yytext );
+                    return ID_VARIABLE; 
+                }
 
 \(              { return 'OPEN_PAREN'; }
 
@@ -119,7 +125,6 @@ tab             \t
                     fprintf(stderr, "FLEX: Error detectado en la línea %d - Carácter no reconocido '%s'.\n", line_number, yytext); 
                     exit(1);
                 }
-/* ======= Fin definición de producciones ======= */
 
 %%
 
