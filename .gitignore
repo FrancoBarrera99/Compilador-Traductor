@@ -1,0 +1,6 @@
+# Ignorar archivos generados por Bison
+*.tab.c
+*.tab.h
+
+# Ignorar archivos generados por Flex
+lex.yy.c
