@@ -1,0 +1,15 @@
+Inicio
+	Entero Mauricio;
+	Leer (Mauricio);
+	Si (Mauricio = 0) Entonces
+		Mauricio = Mauricio + 1;
+	SiNo
+		Mauricio = Mauricio + 2;
+	FinSi;
+	Entero vContador;
+	vContador = 1;
+	Mientras (vContador < 10) Hacer
+		vContador = vContador + 1;
+		Escribir (vContador);
+	FinMientras;
+Fin
