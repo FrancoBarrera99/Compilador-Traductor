@@ -6,10 +6,4 @@ Inicio
 	SiNo
 		Mauricio = Mauricio + 2;
 	FinSi;
-	Entero vContador;
-	vContador = 1;
-	Mientras (vContador < 10) Hacer
-		vContador = vContador + 1;
-		Escribir (vContador);
-	FinMientras;
 Fin
